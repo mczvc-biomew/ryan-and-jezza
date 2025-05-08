@@ -239,11 +239,21 @@ onBeforeMount( () => {
     display: block;
   }
   &.wedding-date-left {
-    transform: translate3d(calc(50vw - 200px), 0, 0);
+    --translate-x: 200px;
+    transform: translate3d(calc(50vw - var(--translate-x)), 0, 0);
+
+    @media (max-width: 444px) {
+      --translate-x: 157px;
+    }
   }
   &.wedding-date-right {
+    --translate-x: 130px;
     margin-top: -4.3rem;
-    transform: translate3d(calc(50vw + 130px), 0, 0);
+    transform: translate3d(calc(50vw + var(--translate-x)), 0, 0);
+
+    @media (max-width: 444px) {
+      --translate-x: 100px;
+    }
   }
 }
 
@@ -367,9 +377,6 @@ onBeforeMount( () => {
       font-size: 3.5rem;
       font-weight: bold;
 
-      @media (max-width: 640px) and (max-height: 730px) {
-        font-size: 1.2rem;
-      }
     }
     li h6 {
       font-family: 'Plus Jakarta Sans';
@@ -387,15 +394,8 @@ onBeforeMount( () => {
         position: relative;
         display: block;
         top: -10px;
-        @media (max-height: 730px) and (max-width: 640px) {
-          top: 19.7px;
-        }
       }
 
-      @media (max-height: 730px) and (max-width: 640px) {
-        margin-bottom: -16px;
-        margin-top: -0.2rem;
-      }
     }
   }
 }
