@@ -85,6 +85,10 @@
           width: 100%;
         }
       }
+
+      a {
+        cursor: pointer;
+      }
     }
   }
 }
