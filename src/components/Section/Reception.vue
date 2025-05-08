@@ -71,10 +71,19 @@
       padding: 5px;
       height: 100%;
       display: inline-block;
+
+      &:after {
+          content: '';
+          display: block;
+          height: 2px;
+          background-color: @border-color;
+          transition: width ease 500ms;
+          width: 0;
+      }
       &:hover {
-        border-bottom-width: 1px;
-        border-bottom-color: @border-color;
-        border-bottom-style: solid;
+        &:after {
+          width: 100%;
+        }
       }
     }
   }
