@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN'
+          'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg height="437.6" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="31.0 31.2 438.0 437.6" width="438.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+><g
+  ><g id="change1_1"
+    ><path d="M469,48.8h-99.3c12.4-6,18.8-17.6,68.4-17.6C456.4,31.2,465,42.3,469,48.8z" fill="#0F0F0F"
+    /></g
+    ><g id="change1_2"
+    ><path d="M48.9,369.8v99c-6.5-4-17.5-12.6-17.5-30.8C31.4,369.8,42.9,382.1,48.9,369.8z" fill="#0F0F0F"
+    /></g
+    ><linearGradient gradientTransform="matrix(1 0 0 -1 0 500)" gradientUnits="userSpaceOnUse" id="a" x1="31.5" x2="433.4" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" y1="267.75" y2="267.75"
+    ><stop offset=".003" stop-color="#ddb045"
+      /><stop offset=".124" stop-color="#f8d759"
+      /><stop offset=".309" stop-color="#b17123"
+      /><stop offset=".473" stop-color="#f8d759"
+      /><stop offset=".695" stop-color="#b17123"
+      /><stop offset=".696" stop-color="#b17024"
+      /><stop offset=".739" stop-color="#ad5f38"
+      /><stop offset=".768" stop-color="#ac593f"
+      /><stop offset=".787" stop-color="#b26341"
+      /><stop offset=".819" stop-color="#c17c46"
+      /><stop offset=".859" stop-color="#daa64f"
+      /><stop offset=".9" stop-color="#f8d759"
+      /><stop offset="1" stop-color="#d68639"
+    /></linearGradient
+    ><path d="M433.4,31.3c-22.3,0.3-28.2,3.3-50.1,25.1L56.6,383.2c-21.9,21.9-24.9,27.8-25.1,50.1V221.2 c0-26.3,1.8-31.4,25.2-54.8l110-110c23.4-23.4,28.4-25.2,54.8-25.2L433.4,31.3z" fill="url(#a)"
+    /><g id="change2_1"
+    ><path d="M31,229.8c0-23.9,0.6-26.8,22.7-48.9l127-127c22.1-22.1,25-22.7,48.9-22.7h167.6c-3.4,3.1-7.2,6.7-11.5,11 L42,386c-4.3,4.3-7.9,8-11,11.5V229.8z" fill="#232323"
+    /></g
+  ></g
+></svg
+>
