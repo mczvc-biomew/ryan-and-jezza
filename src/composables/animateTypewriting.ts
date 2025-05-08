@@ -33,17 +33,6 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
 
     cursorBlink();
   }
-  type CharTiming = {
-    [k: string]: number
-  }
-  const timingsDelta: CharTiming = {
-    '.': 1000,
-    ')': 750,
-    ',': 750,
-    ';': 500,
-    '~': 320,
-    '!': 1200
-  }
 
   const textArray = [...text];
   textArray.forEach((c) => {
@@ -56,7 +45,7 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
       }
       if (animateEl) addCSSClass(animateEl, "tick");
     }, nextLetter) );
-    nextLetter += c in timingsDelta ? timingsDelta[c] : 120;
+    nextLetter += 120;
   });
   setTimeout( () => { pendingStatus.value = false; }, nextLetter + 2000);
   return internalView;
