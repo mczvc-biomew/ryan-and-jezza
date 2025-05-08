@@ -15,12 +15,13 @@ const getSrc = (path: string): string => {
   return file.default || '';
 }
 
-useSeo({
-  type: 'WebSite',
-  location: route.path,
-  icon: getSrc("/assets/favicon.ico"),
-  useConfig: true
-});
+// useSeo({
+//   type: 'WebSite',
+//   location: route.path,
+//   icon: getSrc("/assets/favicon.ico"),
+//   useConfig: true
+// });
+useTitle('Ryan Christian and Jezza are Getting Married!');
 
 </script>
 
