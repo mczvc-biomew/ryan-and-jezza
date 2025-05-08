@@ -8,7 +8,7 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
   let nextLetter = 0;
   let maxTicks = maxBlink ?? 3;
   let nextText = "";
-  let internalView;
+  let internalView: Ref<string>;
   const key = text;
   if (!viewRef) internalView = ref('');
   else internalView = viewRef;
@@ -47,6 +47,8 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
     }, nextLetter) );
     nextLetter += 120;
   });
+
   setTimeout( () => { pendingStatus.value = false; }, nextLetter + 2000);
+
   return internalView;
 }
