@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   srcDir: 'src/',
   app: {
-    baseURL: '/ryan-and-jezza'
+    baseURL: '/ryan-and-jezza/'
   },
   modules: ['@unocss/nuxt', '@nuxtjs/i18n', '@vueuse/nuxt', '@nuxtjs/mdc'],
   css: [ '~/assets/css/fonts.css' ],
