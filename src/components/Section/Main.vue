@@ -241,17 +241,20 @@ onBeforeMount( () => {
   &.wedding-date-left {
     --translate-x: 200px;
     transform: translate3d(calc(50vw - var(--translate-x)), 0, 0);
-
-    @media (max-width: 444px) {
-      --translate-x: 157px;
-    }
   }
   &.wedding-date-right {
     --translate-x: 130px;
     margin-top: -4.3rem;
     transform: translate3d(calc(50vw + var(--translate-x)), 0, 0);
+  }
+}
 
-    @media (max-width: 444px) {
+@media (max-width: 444px) {
+  .wedding-date {
+    &.wedding-date-left {
+      --translate-x: 157px;
+    }
+    &.wedding-date-right {
       --translate-x: 100px;
     }
   }
