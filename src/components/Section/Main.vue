@@ -108,6 +108,7 @@ onBeforeMount( () => {
 </script>
 
 <style lang="less">
+@import url(~/assets/css/less/variables.less);
 
 .section-main {
   height: auto;
@@ -208,7 +209,6 @@ onBeforeMount( () => {
   margin-top: -125px;
 }
 
-@border-color: #b26338;
 
 .wedding-date {
   position: absolute;
