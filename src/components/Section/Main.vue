@@ -110,13 +110,13 @@ onBeforeMount( () => {
 <style lang="less">
 
 .section-main {
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   position: relative;
 }
 
 .background-video {
-  height: max(119vh, 100vw);
+  height: max(100%, 100vw);
   aspect-ratio: 16 / 9;
   position: absolute;
   opacity: 0.2;
@@ -125,7 +125,11 @@ onBeforeMount( () => {
 .section-main__inner {
   background-color: #7f0021;
   animation: zoom 3s ease;
-  height: 100vh;
+  height: auto;
+
+  @media (min-width: 516px) {
+    height: 100vh;
+  }
 }
 
 .entrance-enter-active,
@@ -324,7 +328,7 @@ onBeforeMount( () => {
 .countdown {
 
   @media (max-width: 640px) {
-    height: 660px;
+    // height: 660px;
   }
 
   ul {
@@ -334,11 +338,18 @@ onBeforeMount( () => {
     gap: 1rem;
     z-index: 10;
 
+
     @media (max-width: 640px) {
-      display: block !important;
-      overflow-y: scroll;
+      display: flex !important;
+      flex-wrap: wrap;
+      // overflow-y: scroll;
       position: relative;
-      height: 316px;
+      // height: 316px;
+    }
+
+    @media (max-width: 376px) {
+      display: block !important;
+      position: relative;
     }
 
     li {
@@ -425,7 +436,7 @@ onBeforeMount( () => {
 .banner-bottom-left {
   overflow-y: hidden;
   position: absolute;
-  top: calc(100vh - @banner-size);
+  top: calc(100% - @banner-size);
 
 }
 
