@@ -28,3 +28,8 @@
   font-family: 'Roboto';
   src: url("~/assets/fonts/Roboto/Roboto.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url("~/assets/fonts/Quicksand.ttf") format("truetype");
+}
