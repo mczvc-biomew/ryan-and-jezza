@@ -82,7 +82,6 @@ function init() {
   setTimeout( () => {
     const bgAnimationWrapper = (document.querySelector('.bg-animation-wrapper') as HTMLElement);
     bgAnimationWrapper.style.position = 'initial';
-    console.log(bgAnimationWrapper)
   }, 1600);
 
   setTimeout( () => {
