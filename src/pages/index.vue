@@ -2,27 +2,20 @@
   <div class="w-full page-container">
     <SectionMain/>
     <SectionReception/>
+    <SectionDetails/>
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
 
-const getSrc = (path: string): string => {
-  const modules = import.meta.glob("/assets/**/*", { eager: true});
-  const file = <{ default: string }>(modules[path]) || {default: ''};
 
-  return file.default || '';
-}
-
-// if (import.meta.server) {
-  useSeo({
-    type: 'WebSite',
-    location: route.path,
-    icon: getSrc("/assets/favicon.ico"),
-    useConfig: true
-  });
-// }
+useSeo({
+  type: 'WebSite',
+  location: route.path,
+  icon: getSrcAssets("/assets/favicon.ico"),
+  useConfig: true
+});
 
 function init() {
 
