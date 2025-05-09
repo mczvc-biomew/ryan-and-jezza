@@ -1,5 +1,3 @@
-import url from "url";
-
 import config from "@/config.json";
 
 
@@ -37,7 +35,8 @@ export default function ({
     const metaImageWidth = imageWidth ? `${imageWidth}`: null;
     const metaImageHeight = imageHeight ? `${imageHeight}`: null;
     const metaFBID = fbid ? `${fbid}` : null;
-    const canonical = url.resolve(metadata.siteUrl, location);
+    // const canonical = url.resolve(metadata.siteUrl, location);
+    const canonical = metadata.siteUrl + location;
 
     publishedAt && (publishedAt = new Date(publishedAt).toISOString())
     updatedAt && (updatedAt = new Date(updatedAt).toISOString())
