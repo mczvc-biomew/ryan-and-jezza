@@ -6,8 +6,11 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/ryan-and-jezza/'
   },
-  modules: ['@unocss/nuxt', '@nuxtjs/i18n', '@vueuse/nuxt', '@nuxtjs/mdc'],
-  css: [ '~/assets/css/fonts.css' ],
+  modules: ['@unocss/nuxt', '@nuxtjs/i18n', '@vueuse/nuxt', '@nuxtjs/mdc', 'nuxt-swiper'],
+  css: [ 
+    '~/assets/css/fonts.css', 
+    '~/assets/css/eicons.css' 
+  ],
   postcss: {
     plugins: {
        tailwindcss: {},
