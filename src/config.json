@@ -1,0 +1,21 @@
+{
+    "siteMetadata": {
+        "title": "Ryan Christian and Jezza are Getting Married!",
+        "siteUrl": "https://mczvc-biomew.github.io",
+        "description": "Ryan Christian and Jezza are Getting Married",
+        "keywords":["Wedding", "Invitation", "RSVP"],        
+        "author": {
+          "name": "Meldencio Czarlemagne",
+          "description": "I'm <strong>Meldencio Czarlemagne</strong>",
+          "social": {
+            "facebook": "https://facebook.com/mczvc12",
+            "twitter": "https://x.com/mczvc12",
+            "linkedin": "https://www.linkedin.com/in/meldencio-czarlemagne",
+            "instagram": "https://instagram.com/mczvc12",
+            "youtube": "",
+            "github": "https://github.com/mczvc-biomew",
+            "twitch": ""
+          }
+        }
+      }
+}
