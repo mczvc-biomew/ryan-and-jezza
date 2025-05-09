@@ -15,14 +15,14 @@ const getSrc = (path: string): string => {
   return file.default || '';
 }
 
-if (import.meta.server) {
+// if (import.meta.server) {
   useSeo({
     type: 'WebSite',
     location: route.path,
     icon: getSrc("/assets/favicon.ico"),
     useConfig: true
   });
-}
+// }
 
 function init() {
 
