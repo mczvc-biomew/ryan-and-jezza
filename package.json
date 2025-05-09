@@ -20,6 +20,7 @@
     "markdown-it-deflist": "^3.0.0",
     "marked": "^15.0.1",
     "nuxt": "^3.14.159",
+    "nuxt-swiper": "^2.0.0",
     "remark-mdc": "^3.5.0",
     "remark-parse": "^11.0.0",
     "unified": "^11.0.5",
