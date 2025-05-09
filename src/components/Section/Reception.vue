@@ -3,15 +3,15 @@
     <div class="heading-column py-8 flex justify-center">
       <span class="divider"></span>
     </div>
-    <div class="links-column flex gap-7 nav-links">
+    <div class="links-column flex gap-7 nav-links animate-on-scroll-all">
       <ul class="flex">
-        <li>
+        <li class="animate-slide-left-50">
           <NuxtLink>Invitation</NuxtLink>
         </li>
-        <li>
+        <li class="animate-slide-left-50">
           <NuxtLink>Details</NuxtLink>
         </li>
-        <li>
+        <li class="animate-slide-left-50">
           <NuxtLink>RSVP</NuxtLink>
         </li>
       </ul>
@@ -21,6 +21,34 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+
+function init() {
+
+  const revealOnScrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach( (entry) => {
+      if (entry.isIntersecting) {
+        let timing = 500;
+        Array.from(entry.target.querySelectorAll('.animate-slide-left-50')).forEach((el) => {
+          setTimeout( () => {
+            el.classList.add('reveal');
+          }, timing);
+          timing += 500;
+        })
+      }
+    });
+  }, { threshold: 0.5});
+  Array.from(document.querySelectorAll('.animate-on-scroll-all')).forEach( (el) => {
+    revealOnScrollObserver.observe(el);
+  });
+
+}
+
+onMounted( () => {
+  init();
+});
+</script>
 
 <style>
 
@@ -67,6 +95,7 @@
   justify-content: center;
   ul {
     list-style-type: none;
+    padding-left: 0;
     li {
       padding: 5px;
       height: 100%;
