@@ -1,3 +1,10 @@
+export function getSrcAssets(path: string): string {
+  const modules = import.meta.glob("/assets/**/*", { eager: true});
+  const file = <{ default: string }>(modules[path]) || {default: ''};
+
+  return file.default || '';
+}
+
 export function translateObject(x: string, y: string, element: HTMLElement) {
 	if (element)
 		element.style.transform = "translate3d(" + x + ", " + y + ", 0)";
