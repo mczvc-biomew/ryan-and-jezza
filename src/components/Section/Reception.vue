@@ -63,6 +63,12 @@ onMounted( () => {
 
 }
 
+.links-column {
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+}
+
 @media (min-width: 768px) {
   .heading {
     flex-direction: row;
