@@ -23,25 +23,32 @@
             Christian & Jezza
           </p>
           <div class="wedding-date-wrapper">
-            <p class="wedding-date wedding-date-left">
-              <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span></p>
+            <div class="wedding-date wedding-date-left">
+              <div class="animate-once animate-reveal-up-50">
+                <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span>
+              </div>
+            </div>
             <div class="wedding-date-center">
               <div class="animate-once animate-spin-y absolute">
                 <span>21</span>
               </div><br>
-              <span class="">NOV</span>
+              <div class="animate-once animate-reveal-up-50">
+                <span>NOV</span>
+              </div>
             </div>
             <div class="wedding-date wedding-date-right">
-              <Transition name="reveal-digit">
-                <div class="inline-block" :key="weddingHour"
-                  >{{ weddingHour }}
-                </div>
-              </Transition>
-              <span> am</span>
+              <div class="animate-once animate-reveal-up-50 inline-block">
+                <Transition :name="weddingHourAnimeName">
+                  <div class="inline-block" :key="weddingHour"
+                    >{{ weddingHour }}
+                  </div>
+                </Transition>
+                <span> am</span>
+              </div>
             </div>
           </div>
         </div>
-        <Countdown/>
+        <Countdown class="animate-once animate-reveal-up-50"/>
         <div class="banner-bottom-left flex justify-start">
           <div class="banner-circular-bottom-left"></div>
           <div class="banner-circles banner-circles-bottom-left"></div>
@@ -60,6 +67,8 @@ const diamondRing = ref<HTMLElement>();
 const weddingWeekdayEl = ref<HTMLElement>();
 const weddingWeekdayText = ref('');
 
+const weddingHourAnimeName = ref('');
+
 const weddingHour = ref('00');
 
 async function handleClick() {
@@ -69,6 +78,7 @@ async function handleClick() {
 
 function init() {
 
+
   setTimeout( () => {
     const bgAnimationWrapper = (document.querySelector('.bg-animation-wrapper') as HTMLElement);
     bgAnimationWrapper.style.position = 'initial';
@@ -76,7 +86,6 @@ function init() {
   }, 1600);
 
   setTimeout( () => {
-    weddingHour.value = '09';
 
     const hawTypewritingPending = ref(false);
     animateTypewriting('Christian & Jezza', hawTypewritingPending, husbandAndWifeEl.value, ref(''), 8, true);
@@ -84,17 +93,14 @@ function init() {
     setTimeout( () => {
       const typewritingPending = ref(false);
       animateTypewriting('Friday', typewritingPending, weddingWeekdayEl.value, weddingWeekdayText, 3, true);
+
+      setTimeout( () => {
+        weddingHourAnimeName.value = 'reveal-digit';
+        weddingHour.value = '09';
+      }, 2000);
     }, 1000);
   }, 1000);
 
-  let timeSequence = 1000;
-  const animateOnce = document.querySelectorAll('.animate-once');
-  animateOnce.forEach( (el) => {
-    setTimeout( () => {
-      el.classList.add('reveal');
-    }, timeSequence);
-    timeSequence += 500;
-  });
 }
 
 onMounted( async () => {
@@ -240,6 +246,7 @@ onBeforeMount( () => {
   }
   &.wedding-date-left {
     --translate-x: 200px;
+    margin-top: 1.4rem;
     transform: translate3d(calc(50vw - var(--translate-x)), 0, 0);
   }
   &.wedding-date-right {
@@ -269,38 +276,6 @@ onBeforeMount( () => {
   margin-top: 0.4rem;
 }
 
-.animate-reveal-up(@translate-y) {
-  transition: transform ease 1s, opacity ease 800ms;
-  transform: translate3d(0, @translate-y, 0);
-  opacity: 0;
-
-  &.reveal {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-.animate-spin-y(@y-deg) {
-  transition: transform ease 1s, opacity ease 800ms;
-  --translate-x: 40vw;
-  --rotate-y: @y-deg;
-  transform: translateX(var(--translate-x)) rotateY(var(--rotate-y));
-  opacity: 0;
-
-  &.reveal {
-    --rotate-y: 0;
-    --translate-x: 50vw;
-    opacity: 1;
-  }
-}
-
-.animate-spin-y {
-  .animate-spin-y(720deg);
-}
-
-.animate-reveal-up-50 {
-  .animate-reveal-up(50px);
-}
 
 .reveal-digit-enter-active, 
 .reveal-digit-leave-active {
