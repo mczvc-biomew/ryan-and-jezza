@@ -134,6 +134,7 @@ onBeforeMount( () => {
   aspect-ratio: 16 / 9;
   position: absolute;
   opacity: 0.2;
+  pointer-events: none;
 }
 
 .section-main__inner {
