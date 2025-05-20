@@ -4,7 +4,7 @@ type AnimationMap<K extends string, V> = {
 const animations: AnimationMap<string, Ref<NodeJS.Timeout[]>> = {};
 
 
-export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: HTMLElement, viewRef?: Ref<string>, maxBlink?: number, modifyElement = false) {
+export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: HTMLElement, viewRef?: Ref<string>, maxBlink?: number, modifyElement = false, speed = 120, delay = 700) {
   let nextLetter = 0;
   let maxTicks = maxBlink ?? 3;
   let nextText = "";
@@ -28,7 +28,7 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
         maxTicks--;
         if (maxTicks > 0 || (maxTicks <= 0 && animateEl.classList.contains("tick")))
           cursorBlink();
-      }, 700) );
+      }, delay) );
     };
 
     cursorBlink();
@@ -45,7 +45,7 @@ export default function (text: string, pendingStatus: Ref<boolean>, animateEl?: 
       }
       if (animateEl) addCSSClass(animateEl, "tick");
     }, nextLetter) );
-    nextLetter += 120;
+    nextLetter += speed;
   });
 
   setTimeout( () => { pendingStatus.value = false; }, nextLetter + 2000);
