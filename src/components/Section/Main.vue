@@ -19,15 +19,19 @@
           <p class="p-heading animate-once animate-reveal-up-50"
             >The Wedding Day Of
           </p>
-          <p class="c-and-j" ref="husbandAndWifeEl">
+          <p class="c-and-j animate-once animate-reveal-up-100" ref="husbandAndWifeEl">
             Christian & Jezza
           </p>
           <div class="wedding-date-wrapper">
-            <div class="wedding-date wedding-date-left">
-              <div class="animate-once animate-reveal-up-50">
-                <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span>
+
+            <div class="animate-once animate-slide-right-100">
+              <div class="wedding-date wedding-date-left">
+                <div class="animate-once animate-reveal-up-50">
+                  <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span>
+                </div>
               </div>
             </div>
+            
             <div class="wedding-date-center">
               <div class="animate-once animate-spin-y absolute">
                 <span>21</span>
@@ -36,16 +40,20 @@
                 <span>NOV</span>
               </div>
             </div>
-            <div class="wedding-date wedding-date-right">
-              <div class="animate-once animate-reveal-up-50 inline-block">
-                <Transition :name="weddingHourAnimeName">
-                  <div class="inline-block" :key="weddingHour"
-                    >{{ weddingHour }}
-                  </div>
-                </Transition>
-                <span> am</span>
+
+            <div class="animate-once animate-slide-left-100">
+              <div class="wedding-date wedding-date-right">
+                <div class="animate-once animate-reveal-up-50 inline-block">
+                  <Transition :name="weddingHourAnimeName">
+                    <div class="inline-block" :key="weddingHour"
+                      >{{ weddingHour }}
+                    </div>
+                  </Transition>
+                  <span> am</span>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
         <Countdown class="animate-once animate-reveal-up-50"/>
@@ -87,7 +95,7 @@ function init() {
   setTimeout( () => {
 
     const hawTypewritingPending = ref(false);
-    animateTypewriting('Christian & Jezza', hawTypewritingPending, husbandAndWifeEl.value, ref(''), 8, true);
+    animateTypewriting('Christian & Jezza', hawTypewritingPending, husbandAndWifeEl.value, ref(''), 8, true, 200);
 
     setTimeout( () => {
       const typewritingPending = ref(false);
@@ -96,9 +104,9 @@ function init() {
       setTimeout( () => {
         weddingHourAnimeName.value = 'reveal-digit';
         weddingHour.value = '09';
-      }, 2000);
+      }, 100);
     }, 1000);
-  }, 1000);
+  }, 4000);
 
 }
 
@@ -144,7 +152,7 @@ onBeforeMount( () => {
 }
 
 .entrance-enter-from {
-  animation: zoom 1s ease;
+  animation: zoom 2s ease;
 }
 
 @keyframes zoom {
