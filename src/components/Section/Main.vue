@@ -1,73 +1,81 @@
 <template>
-  <Transition name="entrance">
-    <section class="section-main">
-      <div class="section-main__inner flex flex-col justify-between">
-        <div class="bg-animation-wrapper [width:100vw] overflow-x-hidden relative">
-          <video class="background-video" autoplay loop ref="backgroundVideo">
-            <source src="~/assets/video/background.mp4">
-          </video>
-        </div>
-        <div class="ribbon ribbon-top-left"></div>
-        <div class="banner-top-right flex justify-end">
-          <div class="banner-circular-top-right"></div>
-          <div class="banner-circles banner-circles-top-right"></div>
-        </div>
-        <div class="text-content">
-          <div class="wrapper animate-once animate-reveal-up-50 flex justify-center items-center" ref="diamondRing">
-            <div class="icon-diamond-ring"></div>
-          </div>
-          <p class="p-heading animate-once animate-reveal-up-50"
-            >The Wedding Day Of
-          </p>
-          <p class="c-and-j animate-once animate-reveal-up-100" ref="husbandAndWifeEl">
-            Christian & Jezza
-          </p>
-          <div class="wedding-date-wrapper">
+  <section class="section-main">
+    <div class="section-main__inner flex flex-col justify-between">
 
-            <div class="animate-once animate-slide-right-100">
-              <div class="wedding-date wedding-date-left">
-                <div class="animate-once animate-reveal-up-50">
-                  <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="wedding-date-center">
-              <div class="animate-once animate-spin-y absolute">
-                <span>21</span>
-              </div><br>
-              <div class="animate-once animate-reveal-up-50">
-                <span>NOV</span>
-              </div>
-            </div>
-
-            <div class="animate-once animate-slide-left-100">
-              <div class="wedding-date wedding-date-right">
-                <div class="animate-once animate-reveal-up-50 inline-block">
-                  <Transition :name="weddingHourAnimeName">
-                    <div class="inline-block" :key="weddingHour"
-                      >{{ weddingHour }}
-                    </div>
-                  </Transition>
-                  <span> am</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <Countdown class="animate-once animate-reveal-up-50"/>
-        <div class="banner-bottom-left flex justify-start">
-          <div class="banner-circular-bottom-left"></div>
-          <div class="banner-circles banner-circles-bottom-left"></div>
-        </div>
-        <div class="ribbon ribbon-bottom-right"></div>
+      <div class="bg-animation-wrapper [width:100vw] overflow-x-hidden relative">
+        <video class="background-video" autoplay loop ref="backgroundVideo">
+          <source src="~/assets/video/background.mp4">
+        </video>
       </div>
-    </section>
-  </Transition>
+
+      <div class="ribbon ribbon-top-left"></div>
+
+      <div class="banner-top-right flex justify-end">
+        <div class="banner-circular-top-right"></div>
+        <div class="banner-circles banner-circles-top-right"></div>
+      </div>
+
+      <div class="text-content">
+        <div class="wrapper animate-once animate-reveal-up-50 flex justify-center items-center" ref="diamondRing">
+          <div class="icon-diamond-ring"></div>
+        </div>
+        <p class="p-heading animate-once animate-reveal-up-50"
+          >The Wedding Day Of
+        </p>
+        <p class="c-and-j animate-once animate-reveal-up-100" ref="husbandAndWifeEl">
+          Christian & Jezza
+        </p>
+
+        <div class="wedding-date-wrapper">
+
+          <div class="animate-once animate-slide-right-100">
+            <div class="wedding-date wedding-date-left">
+              <div class="animate-once animate-reveal-up-50">
+                <span class="wedding-date__weekday" ref="weddingWeekdayEl">Friday</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wedding-date-center">
+            <div class="animate-once animate-spin-y absolute">
+              <span>21</span>
+            </div><br>
+            <div class="animate-once animate-reveal-up-50">
+              <span>NOV</span>
+            </div>
+          </div>
+
+          <div class="animate-once animate-slide-left-100">
+            <div class="wedding-date wedding-date-right">
+              <div class="animate-once animate-reveal-up-50 inline-block">
+                <Transition :name="weddingHourAnimeName">
+                  <div class="inline-block" :key="weddingHour"
+                    >{{ weddingHour }}
+                  </div>
+                </Transition>
+                <span> am</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <Countdown class="animate-once animate-reveal-up-50"/>
+
+      <div class="banner-bottom-left flex justify-start">
+        <div class="banner-circular-bottom-left"></div>
+        <div class="banner-circles banner-circles-bottom-left"></div>
+      </div>
+
+      <div class="ribbon ribbon-bottom-right"></div>
+
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
+
 const backgroundVideo = ref<HTMLVideoElement>();
 
 const husbandAndWifeEl = ref<HTMLElement>();
@@ -85,7 +93,6 @@ async function handleClick() {
 }
 
 function init() {
-
 
   setTimeout( () => {
     const bgAnimationWrapper = (document.querySelector('.bg-animation-wrapper') as HTMLElement);
@@ -139,7 +146,7 @@ onBeforeMount( () => {
 
 .section-main__inner {
   background-color: #7f0021;
-  animation: zoom 3s ease;
+  animation: zoom-shake 3s ease;
   height: auto;
 
   @media (min-width: 516px) {
@@ -147,16 +154,7 @@ onBeforeMount( () => {
   }
 }
 
-.entrance-enter-active,
-.entrance-leave-active {
-  transition: transform ease 1s;
-}
-
-.entrance-enter-from {
-  animation: zoom 2s ease;
-}
-
-@keyframes zoom {
+@keyframes zoom-shake {
   0% {
     transform: scale(0.6);
   }
