@@ -88,6 +88,7 @@ onMounted( () => {
   mask-image: url("~/assets/images/divider.svg");
   mask-size: auto 100%;
   mask-repeat: repeat-x;
+
   min-height: 20px;
   width: 48%;
   display: block;
