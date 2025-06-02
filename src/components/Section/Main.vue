@@ -3,7 +3,7 @@
     <div class="section-main__inner flex flex-col justify-between">
 
       <div class="bg-animation-wrapper [width:100vw] overflow-x-hidden relative">
-        <video class="background-video" autoplay loop ref="backgroundVideo">
+        <video class="background-video" autoplay muted loop ref="backgroundVideo">
           <source src="~/assets/video/background.mp4">
         </video>
       </div>
